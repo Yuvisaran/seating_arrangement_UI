@@ -29,7 +29,13 @@ class SeatingPage extends Component {
         <Container className="themed-container mb-70">
           <SeatsContent seatingData={seatingData} />
         </Container>
-        <Button onClick={() => this.props.history.back()} primary>
+        <Button
+          onClick={() => {
+            localStorage.clear();
+            this.props.history.back();
+          }}
+          primary
+        >
           Go Back
         </Button>
       </div>
